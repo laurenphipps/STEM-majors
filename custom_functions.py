@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 pd.set_option('display.max_columns', 300)
 
 def import_it(filepath):
