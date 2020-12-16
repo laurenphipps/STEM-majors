@@ -59,6 +59,9 @@ def clean_it(df):
     #change sex to a dummy variable for female
     df['female'] = np.where(df['X2SEX'] == 2, 1, 0)
     
+    #combine hispanic into one column
+    df['X2RACE'].replace({4:5}, inplace = True)
+    
     #create dummy for public/private school
     df['private'] = [1 if x == 2 else 0 for x in df['X2CONTROL']]
     df['public'] = [1 if x == 1 else 0 for x in df['X2CONTROL']]
