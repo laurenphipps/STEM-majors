@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+
 pd.set_option('display.max_columns', 300)
 
 def import_it(filepath):
@@ -169,6 +170,9 @@ def clean_it(df):
     #change to yes/no
     df.S2HSPLAN = np.where(df['S2HSPLAN'] == 1, 1, 0)
     df.S2SUBMITPLAN = np.where(df['S2SUBMITPLAN'] == 1, 1, 0)
+    
+    #group expected highest education achieved to be highest degree completed
+    df['EXPECT'] = df['X2STUEDEXPCT'].replace({1:1, 2:2, 3:2, 4:3, 5:2, 6:4, 7:4, 8:5, 9:5, 10:6, 11:6, 12:7, 13:8})
     
     return df
 
