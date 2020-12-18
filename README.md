@@ -1,18 +1,21 @@
-# STEM-majors
+# Increasing STEM Enrollment
+#### *Lauren Phipps*
 ![microscope](img/microscopes.jpg)
 <span>Photo by <a href="https://unsplash.com/@cheaousa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ousa Chea</a> on <a href="https://unsplash.com/s/photos/science-education?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
 ## Overview
 
+# ***DO THIS***
+
 ## Business Problem
 In 2020 alone, the Department of Education invested $578 million to support STEM (science, technology, engineering, and math) education programs. As the number of STEM jobs is growing at a rate that far exceeds non-STEM jobs (10.2% vs. 5.2%, respectively, from 2009-2015), it is becoming increasingly pressing and important have a substantial number of qualified candidates for these jobs. Over 90% of jobs in STEM require a college degree (Associate's degree or higher), so filling these roles means preparing students to pursue a STEM major in college. It is important to understand what factors and high school science experiences influence a student's decision to major in STEM, in order to know how to best invest this money. This project aims to determine these factors.
 
 ## Data Understanding
-The data in this project comes from the 2009 High School Longitudinal Study from the National Center for Education Statistics within the United State Department of Education. The study surveyed over 23,000 students during the fall of their 9th grade year (baseline), two years later in the spring of their 11th grade year (2012), their 12th grade year (2013), and again three years after their expected high school graduation year (in 2016). The study plans to collect data one more time in 2025. The students in this study come form 944 different schools, both public and private, from all states across the United States. Each row in the dataset is a student and each feature a question on the survey.
+The data in this project comes from the [2009 High School Longitudinal Study](https://nces.ed.gov/surveys/hsls09/index.asp) from the National Center for Education Statistics within the United State Department of Education. The study surveyed over 23,000 students during the fall of their 9th grade year (baseline), two years later in the spring of their 11th grade year (2012), their 12th grade year (2013), and again three years after their expected high school graduation year (in 2016). The students in this study come from 944 different schools, both public and private, from all states across the United States. Each row in the dataset is a student and each feature is a question on the survey.
 
-The project focused on the survey responses from the 2012 survey in order to get a more complete and thorough representation of the student's high school experience, with regards to impressions of science and participation in science activities. The target for the project comes from the 2016 survey, where students indicate whether or not they are enrolled in a STEM major. Only students who responded to the 2016 survey question were included in the modeling data set.  While there are many features included in the dataset, this project focused on the student's attitude towards science, specific experiences related to science (class enrollment, participation in clubs), impression of their science teacher, and their reasoning for taking science classes. 
+This project focused on the survey responses from the 2012 survey in order to get a more complete and representation of the student's high school experience, with regards to impressions of science and participation in science activities. The target for the project comes from the 2016 survey, where students indicate whether or not they are enrolled in a STEM major. Only students who responded to the 2016 survey question were included in the modeling data set.  While there are many features included in the dataset, this project focused on the student's attitude towards science, specific experiences related to science (class enrollment, participation in clubs), impression of their science teacher, and their reasoning for taking science classes, along with their gender and race/ethnicity. 
 
-A full feature list can be found here. The codebook for the categorical values can be found here. 
+A full feature list can be found [here](https://docs.google.com/spreadsheets/d/1cX3M1SLAUiPXo45eHvJOamPJ8VM-0WFzSrHBt4C-z0U/edit?usp=sharinghttps://docs.google.com/spreadsheets/d/1cX3M1SLAUiPXo45eHvJOamPJ8VM-0WFzSrHBt4C-z0U/edit?usp=sharing). The dataset and the corresponding codebook can be downloaded [here](https://nces.ed.gov/OnlineCodebook/Session/Codebook/2763d538-4998-41a8-81bc-bd2b3d972065). 
 
 ## Data Preparation
 Because the dataset is a follow up to a baseline survey, some of the initial respondents did not participate in this follow up survey. This was seen as a `'-8': Unit Non-Response` and these 2,909 rows were dropped since all answers were blank. As it is a survey, the majority of the data cleaning involved handling null values, which were coded as negative values depending on if they were declared N/A and skipped legitimately or left blank. As the features were turned into binary, dummy variables with a positive being `'1'` and all other values being `'0'`, the null values were coded to `'0'`. 
@@ -21,7 +24,7 @@ To consolidate the list of science class options, I created new features that gr
 
 Lastly, in order to map to the target variable, the student must have responded to the 2016 survey question that asks if they are pursuing a STEM major. Students who did not respond with a yes or no were dropped from the dataframe used in modeling. They were included in any exploratory analysis done within the 2012 survey; however, any analysis done with ties to the target variable does not include those students. The modeling dataframe contained 10,974 rows (students).
 
-The complete data cleaning process can be found here. 
+The complete data cleaning process can be found [here](http://localhost:8890/lab/tree/custom_functions.py). 
 
 ## Results
 
@@ -81,7 +84,6 @@ A few next steps would be break the analysis into specific underrepresented grou
 ## Repository Structure
 
 ```
-├── data-files                   <- Dataset and codebooks used
 ├── img                          <- Images and charts used in this project
 ├── notebooks                    <- Scratch notebooks used
 ├── Final-Notebook.ipynb         <- Final notebook of project
