@@ -1,4 +1,4 @@
-# Increasing STEM Enrollment
+# Increasing Student Enrollment in STEM Majors
 #### *Lauren Phipps*
 ![microscope](img/microscopes.jpg)
 <span>Photo by <a href="https://unsplash.com/@cheaousa?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Ousa Chea</a> on <a href="https://unsplash.com/s/photos/science-education?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
@@ -42,9 +42,9 @@ This chart shows the percentage of each gender and race that see themselves as a
 
 This chart shows that females are signficantly underrepresented as STEM majors. Female students made up 55% of the target dataset (all majors), but only 37% of STEM majors.
 
-![race-majors](img/race-majors.png)
+![race-majors](img/female-male-majors.png)
 
-The above graph shows that Black/African American, Hispanic, and White students are all underrepresented within STEM, while Asian students make up a larger percentage of STEM majors than in the overall distribution. Knowing from the previous chart that females are also underrepresented, it would be worth further breaking this down by gender to see how much of the underrepresentation comes from the underrepresentation of women. Overall, though, Black/African students have the most significant underrepresentation within the STEM majors, with their representation being about 1/3 of what it is among all majors.
+This is further broken down by race in the graph above. Across the all races, except for Asian students, female students are underrepresented in STEM majors compared to all majors. Black/African American, Hispanic, and White female students' representation in STEM is nearly half what it is overall. On the other side, across all races, except for Black/African American students, male students are overrepresented in STEM majors. This is seen most in White and Asian males. 
 
 Moving towards modeling, this project is focused on creating a highly interpretable model to understand how each feature impacts whether or not a student selects a STEM major. Using F1 score as my main evaluation metric, the best model was the Logistic Regression with the hyperparamaters optimized using GridSearch. From this model, the coefficients lead to the following odds ratios.
 
